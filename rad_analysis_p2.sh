@@ -1,5 +1,5 @@
 #!/bin/bash
-PATH_HERE=/Users/SamP9/OneDrive/Documents/GitHub/train-ticket
+PATH_HERE=C:/Users/SamP9/OneDrive/Documents/GitHub/train-ticket
 OUTPUT_FILE="output_all_commits.json"
 
 cd "$PATH_HERE"
