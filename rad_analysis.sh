@@ -1,5 +1,5 @@
 #!/bin/bash
-PATH_HERE=/Users/abakhtin22/Documents/TempNet/graal/train-ticket/
+PATH_HERE=/Users/SamP9/OneDrive/Documents/GitHub/train-ticket
 curl --request POST \
     --url http://localhost:8080/ \
     --header 'content-type: application/json' \
