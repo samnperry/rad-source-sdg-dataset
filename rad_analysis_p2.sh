@@ -14,13 +14,12 @@ COMMIT_HASHES=$(git rev-list "origin/$DEFAULT_BRANCH")
 
 for COMMIT_HASH in $COMMIT_HASHES; do
     git checkout $COMMIT_HASH
-
-    echo "### Commit $COMMIT_HASH" >> "$OUTPUT_FILE"
     
     curl --request POST \
         --url http://localhost:8080/ \
         --header 'content-type: application/json' \
         --data "{
+        \"commitHash\": \"$COMMIT_HASH\",
         \"pathToMsRoots\": [\"${PATH_HERE}\"]
     }" >> "$OUTPUT_FILE"
 
