@@ -1,14 +1,9 @@
 #!/bin/bash
 PATH_HERE=C:/Users/SamP9/OneDrive/Documents/GitHub/train-ticket
-
-BASE_DIR=$(dirname "$0")
-OUTPUT_FOLDER="$BASE_DIR/sample_output"
+OUTPUT_FOLDER=C:/Users/SamP9/OneDrive/Documents/GitHub/rad-source-sdg-dataset/sample_output
 OUTPUT_FILE="output_commit_"
 
 cd "$PATH_HERE" || exit
-
-# Create the output folder if it doesn't exist
-mkdir -p "$OUTPUT_FOLDER"
 
 git fetch origin
 
@@ -24,6 +19,6 @@ for COMMIT_HASH in $COMMIT_HASHES; do
         --header 'content-type: application/json' \
         --data "{
         \"pathToMsRoots\": [\"${PATH_HERE}\"]
-    }" > "${OUTPUT_FOLDER}/${OUTPUT_FILE}${COMMIT_HASH}"
+    }" > "${OUTPUT_FOLDER}/${OUTPUT_FILE}${COMMIT_HASH}.json"
 
 done
