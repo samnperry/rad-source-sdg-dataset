@@ -97,7 +97,7 @@ public class TemporalRunner {
                 String restPath = parseForPath(restcall.getUrl());
                 String targetNode = parseForTarget(restcall.getUrl());
                 if (restPath.equals(endpoint.getPath()) && restcall.getHttpMethod().equals(endpoint.getHttpMethod()) && targetNode.equals(endpoint.getSource())){
-                    edges.add(new Edge(restcall.getSource(), endpoint.getSource(), targetNode, 0));
+                    edges.add(new Edge(restcall.getSource(), endpoint.getSource(), endpoint.getPath(), 0));
                 }
             }
         }

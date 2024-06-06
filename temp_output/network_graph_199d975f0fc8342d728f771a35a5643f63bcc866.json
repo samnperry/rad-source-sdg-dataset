@@ -52,621 +52,969 @@
     "timestamp": "199d975f0fc8342d728f771a35a5643f63bcc866",
     "edges": [
         {
-            "source": "ts-preserve-service",
-            "target": "ts-consign-service",
-            "endpoint": "ts-consign-service",
-            "weight": 1
+            "source": "rest-service-6",
+            "target": "rest-service-5",
+            "endpoint": "/hello5",
+            "weight": 2
         },
         {
-            "source": "ts-register-service",
-            "target": "ts-inside-payment-service",
-            "endpoint": "ts-inside-payment-service",
-            "weight": 1
-        },
-        {
-            "source": "rest-service-5",
-            "target": "rest-service-4",
-            "endpoint": "rest-service-4",
+            "source": "ts-rebook-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/create",
             "weight": 1
         },
         {
             "source": "ts-travel2-service",
             "target": "ts-route-service",
-            "endpoint": "ts-route-service",
+            "endpoint": "/route/queryById/{var}",
             "weight": 1
         },
         {
-            "source": "ts-security-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
+            "source": "rest-service-3",
+            "target": "rest-service-end",
+            "endpoint": "/greeting",
             "weight": 1
         },
         {
-            "source": "ts-route-plan-service",
-            "target": "ts-travel-service",
-            "endpoint": "ts-travel-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-travel2-service",
-            "target": "ts-ticketinfo-service",
-            "endpoint": "ts-ticketinfo-service",
-            "weight": 2
+            "source": "ts-register-service",
+            "target": "ts-verification-code-service",
+            "endpoint": "/verification/verify",
+            "weight": 1
         },
         {
             "source": "ts-preserve-other-service",
-            "target": "ts-notification-service",
-            "endpoint": "ts-notification-service",
+            "target": "ts-consign-service",
+            "endpoint": "/consign/insertConsign",
             "weight": 1
         },
         {
-            "source": "ts-route-plan-service",
+            "source": "ts-preserve-other-service",
+            "target": "ts-assurance-service",
+            "endpoint": "/assurance/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/findAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-seat-service",
             "target": "ts-travel2-service",
-            "endpoint": "ts-travel2-service",
+            "endpoint": "/travel2/getRouteByTripId/{var}",
             "weight": 2
         },
         {
-            "source": "ts-basic-service",
-            "target": "ts-train-service",
-            "endpoint": "ts-train-service",
+            "source": "ts-admin-order-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/adminAddOrder",
             "weight": 1
         },
         {
-            "source": "ts-assurance-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
+            "source": "ts-preserve-other-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/create",
             "weight": 1
+        },
+        {
+            "source": "ts-seat-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/getRouteByTripId/{var}",
+            "weight": 2
         },
         {
             "source": "ts-admin-basic-info-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-login-service",
-            "target": "ts-verification-code-service",
-            "endpoint": "ts-verification-code-service",
+            "target": "ts-contacts-service",
+            "endpoint": "/contacts/findAll",
             "weight": 1
         },
         {
-            "source": "ts-admin-user-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-security-service",
-            "endpoint": "ts-security-service",
-            "weight": 1
-        },
-        {
-            "source": "rest-service-6",
-            "target": "rest-service-4",
-            "endpoint": "rest-service-4",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-other-service",
+            "source": "ts-travel-service",
             "target": "ts-ticketinfo-service",
-            "endpoint": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForTravel",
             "weight": 1
         },
         {
             "source": "ts-food-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryForId",
+            "weight": 2
+        },
+        {
+            "source": "ts-food-service",
             "target": "ts-food-map-service",
-            "endpoint": "ts-food-map-service",
+            "endpoint": "/foodmap/getTrainFoodOfTrip",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-seat-service",
+            "endpoint": "/seat/getSeat",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-config-service",
+            "endpoint": "/config/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/findById",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-seat-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/getTrainTypeByTripId/{var}",
             "weight": 2
         },
         {
             "source": "ts-admin-travel-service",
             "target": "ts-travel2-service",
-            "endpoint": "ts-travel2-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-admin-basic-info-service",
-            "target": "ts-config-service",
-            "endpoint": "ts-config-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 4
-        },
-        {
-            "source": "rest-service-3",
-            "target": "rest-service-end",
-            "endpoint": "rest-service-end",
+            "endpoint": "/travel2/adminQueryAll",
             "weight": 1
         },
         {
-            "source": "ts-preserve-other-service",
+            "source": "ts-admin-basic-info-service",
             "target": "ts-station-service",
-            "endpoint": "ts-station-service",
+            "endpoint": "/station/delete",
             "weight": 1
-        },
-        {
-            "source": "ts-travel-plan-service",
-            "target": "ts-seat-service",
-            "endpoint": "ts-seat-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel2-service",
-            "target": "ts-seat-service",
-            "endpoint": "ts-seat-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-seat-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-travel-service",
-            "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-admin-basic-info-service",
-            "target": "ts-contacts-service",
-            "endpoint": "ts-contacts-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-order-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-price-service",
-            "endpoint": "ts-price-service",
-            "weight": 1
-        },
-        {
-            "source": "rest-service-3",
-            "target": "rest-service-6",
-            "endpoint": "rest-service-6",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-inside-payment-service",
-            "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-admin-basic-info-service",
-            "target": "ts-train-service",
-            "endpoint": "ts-train-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-inside-payment-service",
-            "endpoint": "ts-inside-payment-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-travel-service",
-            "target": "ts-train-service",
-            "endpoint": "ts-train-service",
-            "weight": 1
-        },
-        {
-            "source": "rest-service-6",
-            "target": "rest-service-5",
-            "endpoint": "rest-service-5",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-notification-service",
-            "endpoint": "ts-notification-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-food-service",
-            "endpoint": "ts-food-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-seat-service",
-            "endpoint": "ts-seat-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-seat-service",
-            "endpoint": "ts-seat-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-inside-payment-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 2
         },
         {
             "source": "ts-rebook-service",
             "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-food-service",
-            "endpoint": "ts-food-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-consign-service",
-            "target": "ts-consign-price-service",
-            "endpoint": "ts-consign-price-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-ticketinfo-service",
-            "target": "ts-basic-service",
-            "endpoint": "ts-basic-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-travel-service",
-            "target": "ts-route-service",
-            "endpoint": "ts-route-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-cancel-service",
-            "target": "ts-inside-payment-service",
-            "endpoint": "ts-inside-payment-service",
-            "weight": 2
-        },
-        {
-            "source": "rest-service-1",
-            "target": "rest-service-2",
-            "endpoint": "rest-service-2",
-            "weight": 1
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-travel2-service",
-            "endpoint": "ts-travel2-service",
-            "weight": 1
-        },
-        {
-            "source": "rest-service-4",
-            "target": "rest-service-3",
-            "endpoint": "rest-service-3",
+            "endpoint": "/orderOther/getById",
             "weight": 1
         },
         {
             "source": "ts-execute-service",
             "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel2-service",
-            "target": "ts-train-service",
-            "endpoint": "ts-train-service",
-            "weight": 1
-        },
-        {
-            "source": "rest-service-2",
-            "target": "rest-service-1",
-            "endpoint": "rest-service-1",
-            "weight": 1
-        },
-        {
-            "source": "ts-seat-service",
-            "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-ticketinfo-service",
-            "endpoint": "ts-ticketinfo-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-security-service",
-            "endpoint": "ts-security-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-cancel-service",
-            "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-food-service",
-            "target": "ts-travel-service",
-            "endpoint": "ts-travel-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-order-other-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel-service",
-            "target": "ts-ticketinfo-service",
-            "endpoint": "ts-ticketinfo-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-admin-order-service",
-            "target": "ts-order-service",
-            "endpoint": "ts-order-service",
-            "weight": 4
-        },
-        {
-            "source": "rest-service-6",
-            "target": "rest-service-3",
-            "endpoint": "rest-service-3",
-            "weight": 1
-        },
-        {
-            "source": "ts-admin-basic-info-service",
-            "target": "ts-price-service",
-            "endpoint": "ts-price-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-travel-plan-service",
-            "target": "ts-travel2-service",
-            "endpoint": "ts-travel2-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-basic-service",
-            "target": "ts-route-service",
-            "endpoint": "ts-route-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-seat-service",
-            "target": "ts-travel2-service",
-            "endpoint": "ts-travel2-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-travel-service",
-            "endpoint": "ts-travel-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel2-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-admin-route-service",
-            "target": "ts-route-service",
-            "endpoint": "ts-route-service",
-            "weight": 3
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-contacts-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel-plan-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-food-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-admin-order-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-route-plan-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-basic-service",
-            "target": "ts-station-service",
-            "endpoint": "ts-station-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-assurance-service",
-            "endpoint": "ts-assurance-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-inside-payment-service",
-            "target": "ts-payment-service",
-            "endpoint": "ts-payment-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-service",
-            "target": "ts-assurance-service",
-            "endpoint": "ts-assurance-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel-service",
-            "target": "ts-seat-service",
-            "endpoint": "ts-seat-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-rebook-service",
-            "target": "ts-seat-service",
-            "endpoint": "ts-seat-service",
+            "endpoint": "/order/modifyOrderStatus",
             "weight": 1
         },
         {
             "source": "ts-login-service",
             "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-preserve-other-service",
-            "target": "ts-consign-service",
-            "endpoint": "ts-consign-service",
+            "endpoint": "/logout",
             "weight": 1
         },
         {
-            "source": "ts-route-plan-service",
-            "target": "ts-route-service",
-            "endpoint": "ts-route-service",
-            "weight": 2
-        },
-        {
-            "source": "rest-service-3",
-            "target": "rest-service-2",
-            "endpoint": "rest-service-2",
+            "source": "ts-cancel-service",
+            "target": "ts-inside-payment-service",
+            "endpoint": "/inside_payment/drawBack",
             "weight": 2
         },
         {
             "source": "ts-travel-plan-service",
             "target": "ts-ticketinfo-service",
-            "endpoint": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForStationId",
             "weight": 1
         },
         {
-            "source": "ts-register-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-travel-plan-service",
-            "target": "ts-route-plan-service",
-            "endpoint": "ts-route-plan-service",
-            "weight": 3
-        },
-        {
-            "source": "ts-admin-travel-service",
-            "target": "ts-travel-service",
-            "endpoint": "ts-travel-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-travel-plan-service",
-            "target": "ts-travel-service",
-            "endpoint": "ts-travel-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-cancel-service",
-            "target": "ts-sso-service",
-            "endpoint": "ts-sso-service",
-            "weight": 2
-        },
-        {
-            "source": "ts-basic-service",
-            "target": "ts-price-service",
-            "endpoint": "ts-price-service",
-            "weight": 1
-        },
-        {
-            "source": "ts-register-service",
+            "source": "ts-login-service",
             "target": "ts-verification-code-service",
-            "endpoint": "ts-verification-code-service",
+            "endpoint": "/verification/verify",
             "weight": 1
         },
         {
-            "source": "ts-cancel-service",
-            "target": "ts-order-other-service",
-            "endpoint": "ts-order-other-service",
-            "weight": 2
+            "source": "ts-inside-payment-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/modifyOrderStatus",
+            "weight": 1
         },
         {
-            "source": "rest-service-3",
-            "target": "rest-service-1",
-            "endpoint": "rest-service-1",
-            "weight": 3
-        },
-        {
-            "source": "ts-seat-service",
-            "target": "ts-travel-service",
-            "endpoint": "ts-travel-service",
-            "weight": 4
-        },
-        {
-            "source": "ts-cancel-service",
-            "target": "ts-notification-service",
-            "endpoint": "ts-notification-service",
+            "source": "ts-travel2-service",
+            "target": "ts-seat-service",
+            "endpoint": "/seat/getLeftTicketOfInterval",
             "weight": 1
         },
         {
             "source": "ts-security-service",
             "target": "ts-order-service",
-            "endpoint": "ts-order-service",
+            "endpoint": "/getOrderInfoForSecurity",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryById",
+            "weight": 1
+        },
+        {
+            "source": "ts-order-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryForId",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/query",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-5",
+            "target": "rest-service-4",
+            "endpoint": "/hello4",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/adminUpdate",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel2-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/calculate",
+            "weight": 1
+        },
+        {
+            "source": "ts-order-other-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-price-service",
+            "endpoint": "/price/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-ticketinfo-service",
+            "target": "ts-basic-service",
+            "endpoint": "/basic/queryForTravel",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-inside-payment-service",
+            "endpoint": "/inside_payment/payDifference",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-seat-service",
+            "endpoint": "/seat/getLeftTicketOfInterval",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-service",
+            "target": "ts-seat-service",
+            "endpoint": "/seat/getLeftTicketOfInterval",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-6",
+            "target": "rest-service-4",
+            "endpoint": "/hello4",
+            "weight": 2
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-seat-service",
+            "endpoint": "/seat/getSeat",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/adminUpdate",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-route-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/createAndModify",
+            "weight": 1
+        },
+        {
+            "source": "ts-security-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/getOrderOtherInfoForSecurity",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-price-service",
+            "endpoint": "/price/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/queryWithPackage",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-user-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/register",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-login-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/login",
+            "weight": 1
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/queryWithPackage",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-contacts-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/getTripAllDetailInfo",
+            "weight": 1
+        },
+        {
+            "source": "ts-assurance-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-basic-service",
+            "target": "ts-price-service",
+            "endpoint": "/price/query",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/adminQueryAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-food-service",
+            "endpoint": "/food/createFoodOrder",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/calculate",
+            "weight": 1
+        },
+        {
+            "source": "ts-cancel-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-seat-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/getTicketListByDateAndTripId",
+            "weight": 2
+        },
+        {
+            "source": "ts-inside-payment-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/getById",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-user-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/admindelete",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryForId",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-food-service",
+            "endpoint": "/food/createFoodOrder",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/query",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-notification-service",
+            "endpoint": "/notification/order_cancel_success",
+            "weight": 1
+        },
+        {
+            "source": "ts-cancel-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/update",
+            "weight": 2
+        },
+        {
+            "source": "ts-inside-payment-service",
+            "target": "ts-payment-service",
+            "endpoint": "/payment/pay",
+            "weight": 2
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-price-service",
+            "endpoint": "/price/queryAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/retrieve",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryForId",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-3",
+            "target": "rest-service-2",
+            "endpoint": "/hello2",
+            "weight": 2
+        },
+        {
+            "source": "ts-basic-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/retrieve",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/adminAddOrder",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/getById",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-notification-service",
+            "endpoint": "/notification/order_cancel_success",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-seat-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/getTicketListByDateAndTripId",
+            "weight": 2
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/getTripsByRouteId",
+            "weight": 1
+        },
+        {
+            "source": "ts-basic-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/queryById/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-food-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/getRouteByTripId/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryByIdForName",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-config-service",
+            "endpoint": "/config/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-inside-payment-service",
+            "endpoint": "/inside_payment/drawBack",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel2-service",
+            "target": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForStationId",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-consign-service",
+            "endpoint": "/consign/insertConsign",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/queryById/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-basic-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/queryForId",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-contacts-service",
+            "endpoint": "/contacts/admincreate",
+            "weight": 1
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/queryByStartAndTerminal",
+            "weight": 1
+        },
+        {
+            "source": "ts-inside-payment-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/getById",
+            "weight": 1
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/getTripsByRouteId",
+            "weight": 1
+        },
+        {
+            "source": "ts-food-service",
+            "target": "ts-food-map-service",
+            "endpoint": "/foodmap/getFoodStoresOfStation",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-contacts-service",
+            "endpoint": "/contacts/deleteContacts",
+            "weight": 1
+        },
+        {
+            "source": "ts-inside-payment-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/modifyOrderStatus",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-2",
+            "target": "rest-service-1",
+            "endpoint": "/hello1",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-assurance-service",
+            "endpoint": "/assurance/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/query",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-route-plan-service",
+            "endpoint": "/routePlan/minStopStations",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/query",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/getTripAllDetailInfo",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/findById",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-route-plan-service",
+            "endpoint": "/routePlan/cheapestRoute",
+            "weight": 1
+        },
+        {
+            "source": "ts-ticketinfo-service",
+            "target": "ts-basic-service",
+            "endpoint": "/basic/queryForStationId",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-3",
+            "target": "rest-service-1",
+            "endpoint": "/hello1",
+            "weight": 2
+        },
+        {
+            "source": "ts-cancel-service",
+            "target": "ts-notification-service",
+            "endpoint": "/notification/order_cancel_success",
+            "weight": 1
+        },
+        {
+            "source": "ts-basic-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/exist",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-service",
+            "endpoint": "/order/findAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-rebook-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-cancel-service",
+            "target": "ts-sso-service",
+            "endpoint": "/verifyLoginToken/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-price-service",
+            "endpoint": "/price/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-config-service",
+            "endpoint": "/config/queryAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-consign-service",
+            "target": "ts-consign-price-service",
+            "endpoint": "/consignPrice/getPrice",
+            "weight": 2
+        },
+        {
+            "source": "rest-service-3",
+            "target": "rest-service-6",
+            "endpoint": "/hello6_1",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel2-service",
+            "target": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForTravel",
+            "weight": 1
+        },
+        {
+            "source": "ts-cancel-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/findById",
+            "weight": 1
+        },
+        {
+            "source": "ts-register-service",
+            "target": "ts-inside-payment-service",
+            "endpoint": "/inside_payment/createAccount",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/update",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-6",
+            "target": "rest-service-3",
+            "endpoint": "/hello3",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-seat-service",
+            "endpoint": "/seat/getSeat",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-service",
+            "target": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForStationId",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-security-service",
+            "endpoint": "/security/check",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForTravel",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-3",
+            "target": "rest-service-1",
+            "endpoint": "/hello",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-contacts-service",
+            "endpoint": "/contacts/modifyContacts",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-user-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/modify",
+            "weight": 1
+        },
+        {
+            "source": "ts-register-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/register",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-4",
+            "target": "rest-service-3",
+            "endpoint": "/hello3",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-config-service",
+            "endpoint": "/config/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-route-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/queryAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-route-plan-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/queryById/{var}",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-basic-info-service",
+            "target": "ts-station-service",
+            "endpoint": "/station/update",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-travel-service",
+            "target": "ts-travel-service",
+            "endpoint": "/travel/create",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-order-service",
+            "target": "ts-order-other-service",
+            "endpoint": "/orderOther/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel2-service",
+            "target": "ts-train-service",
+            "endpoint": "/train/retrieve",
+            "weight": 1
+        },
+        {
+            "source": "ts-admin-route-service",
+            "target": "ts-route-service",
+            "endpoint": "/route/delete",
+            "weight": 1
+        },
+        {
+            "source": "ts-seat-service",
+            "target": "ts-travel2-service",
+            "endpoint": "/travel2/getTrainTypeByTripId/{var}",
+            "weight": 2
+        },
+        {
+            "source": "ts-admin-user-service",
+            "target": "ts-sso-service",
+            "endpoint": "/account/findAll",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-price-service",
+            "endpoint": "/price/query",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-other-service",
+            "target": "ts-ticketinfo-service",
+            "endpoint": "/ticketinfo/queryForTravel",
+            "weight": 1
+        },
+        {
+            "source": "ts-preserve-service",
+            "target": "ts-security-service",
+            "endpoint": "/security/check",
+            "weight": 1
+        },
+        {
+            "source": "ts-travel-plan-service",
+            "target": "ts-route-plan-service",
+            "endpoint": "/routePlan/quickestRoute",
+            "weight": 1
+        },
+        {
+            "source": "rest-service-1",
+            "target": "rest-service-2",
+            "endpoint": "/hello",
             "weight": 1
         }
     ]
