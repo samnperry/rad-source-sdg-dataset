@@ -10,40 +10,51 @@ import java.util.stream.Collectors;
 
 public class TemporalRunner {
     public static void main (String args[]){
-        File file = new File("C:/Users/SamP9/OneDrive/Documents/GitHub/rad-source-sdg-dataset/sample_output/output_commit_3ea128078eb0ec45f110a77ed151933339d0f626.json");
+        File folder = new File("C:/Users/SamP9/OneDrive/Documents/GitHub/rad-source-sdg-dataset/sample_output");
 
         // Ensure the file exists
-        if (file.isFile()) {
-            try (FileReader reader = new FileReader(file)) {
-                // Parse JSON file
-                JsonElement jsonElement = JsonParser.parseReader(reader);
+        if (folder.isDirectory()) {
+            File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".json"));
+            if (files != null) {
+                    for (File file: files){
+                        if (file.isFile()){
+                        try (FileReader reader = new FileReader(file)) {
+                            if (file.length() == 0){
+                                writeEmptyJsonFile(file);
+                                continue;
+                            }
+                            // Parse JSON file
+                            JsonElement jsonElement = JsonParser.parseReader(reader);
 
-                if (jsonElement != null && jsonElement.isJsonObject()) {
-                    JsonObject jsonObject = jsonElement.getAsJsonObject();
-                    // Extract and process the RestCalls and RestEndpoints
-                    String commit = extractCommitFromPath(file.getAbsolutePath());
-                    NetworkGraph sdg = processJson(jsonObject, commit);
-                    Gson gson = new Gson();
-                    String json = gson.toJson(sdg);
-                    String filename = "C:/Users/SamP9/OneDrive/Documents/GitHub/rad-source-sdg-dataset/temp_output/network_graph_" + commit + ".json";
-                    try (FileWriter fileWriter = new FileWriter(filename)) {
-                        fileWriter.write(json);
+                            if (jsonElement != null && jsonElement.isJsonObject()) {
+                                JsonObject jsonObject = jsonElement.getAsJsonObject();
+                                // Extract and process the RestCalls and RestEndpoints
+                                String commit = extractCommitFromPath(file.getAbsolutePath());
+                                NetworkGraph sdg = processJson(jsonObject, commit);
+                                Gson gson = new Gson();
+                                String json = gson.toJson(sdg);
+                                String filename = "C:/Users/SamP9/OneDrive/Documents/GitHub/rad-source-sdg-dataset/temp_output/network_graph_" + commit + ".json";
+                                try (FileWriter fileWriter = new FileWriter(filename)) {
+                                    fileWriter.write(json);
+                                }
+                            } else {
+                                System.out.println("File " + file.getName() + " does not contain a valid JSON object.");
+                            }
+                            } catch (FileNotFoundException e) {
+                                System.err.println("File not found: " + file.getAbsolutePath());
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                System.err.println("I/O error reading file: " + file.getAbsolutePath());
+                                e.printStackTrace();
+                            } catch (JsonSyntaxException e) {
+                                System.err.println("Invalid JSON syntax in file: " + file.getAbsolutePath());
+                                e.printStackTrace();
+                            }
+                    } else {
+                        System.out.println("The file does not exist or is not a file.");
                     }
-                } else {
-                    System.out.println("File " + file.getName() + " does not contain a valid JSON object.");
                 }
-            } catch (FileNotFoundException e) {
-                System.err.println("File not found: " + file.getAbsolutePath());
-                e.printStackTrace();
-            } catch (IOException e) {
-                System.err.println("I/O error reading file: " + file.getAbsolutePath());
-                e.printStackTrace();
-            } catch (JsonSyntaxException e) {
-                System.err.println("Invalid JSON syntax in file: " + file.getAbsolutePath());
-                e.printStackTrace();
             }
-        } else {
-            System.out.println("The file does not exist or is not a file.");
         }
     }
 
@@ -65,9 +76,15 @@ public class TemporalRunner {
         }
         pathArgs(restEndpoints);
         Set<String> microservices = findMicroservices(restCalls, restEndpoints);
-
         Set<Edge> edges = findLink(restCalls, restEndpoints, microservices);
         NetworkGraph sdg = new NetworkGraph("testSDG", true, true, microservices, commit, edges);
+
+        if (!edges.isEmpty()){
+            sdg = new NetworkGraph("testSDG", true, true, microservices, commit, edges);
+        }
+        else{
+            sdg = new NetworkGraph("testSDG", false, false, microservices, commit, edges);
+        }
 
         return sdg;
     }
@@ -204,6 +221,17 @@ public class TemporalRunner {
         } else {
             System.out.println("Pattern not found in the string.");
             return null;
+        }
+    }
+
+    private static void writeEmptyJsonFile(File file) {
+        String commit = extractCommitFromPath(file.getAbsolutePath());
+        String filename = "C:/Users/SamP9/OneDrive/Documents/GitHub/rad-source-sdg-dataset/temp_output/network_graph_" + commit + ".json";
+        try (FileWriter fileWriter = new FileWriter(filename)) {
+            fileWriter.write("{}");
+        } catch (IOException e) {
+            System.err.println("I/O error writing empty JSON file: " + filename);
+            e.printStackTrace();
         }
     }
 }

@@ -9,7 +9,7 @@ public class NetworkGraph {
     private final Set<String> nodes;
     private final String timestamp;
     private final Set<Edge> edges;
-
+    
     public NetworkGraph(String label, boolean directed, boolean multigraph, Set<String> nodes, String timestamp, Set<Edge> edges) {
         this.label = label;
         this.directed = directed;
@@ -27,4 +27,6 @@ public class NetworkGraph {
         this.timestamp = timestamp;
         this.edges = edges;
     }
+
+
 }
