@@ -1,7 +1,7 @@
 {
-    "label": "testSDG",
+    "label": "SDG3ea1",
     "directed": true,
-    "multigraph": true,
+    "multigraph": false,
     "nodes": [
         "ts-admin-user-service",
         "ts-basic-service",

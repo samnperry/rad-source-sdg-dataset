@@ -1,7 +1,7 @@
 {
-    "label": "testSDG",
+    "label": "SDG8333",
     "directed": true,
-    "multigraph": true,
+    "multigraph": false,
     "nodes": [
         "ts-admin-user-service",
         "ts-basic-service",

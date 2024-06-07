@@ -77,13 +77,13 @@ public class TemporalRunner {
         pathArgs(restEndpoints);
         Set<String> microservices = findMicroservices(restCalls, restEndpoints);
         Set<Edge> edges = findLink(restCalls, restEndpoints, microservices);
-        NetworkGraph sdg = new NetworkGraph("testSDG", true, true, microservices, commit, edges);
+        NetworkGraph sdg = new NetworkGraph("SDG" + commit.substring(0, 4), true, false, microservices, commit, edges);
 
         if (!edges.isEmpty()){
-            sdg = new NetworkGraph("testSDG", true, true, microservices, commit, edges);
+            sdg = new NetworkGraph("SDG" + commit.substring(0, 4), true, false, microservices, commit, edges);
         }
         else{
-            sdg = new NetworkGraph("testSDG", false, false, microservices, commit, edges);
+            sdg = new NetworkGraph("SDG" + commit.substring(0, 4), false, false, microservices, commit, edges);
         }
 
         return sdg;
